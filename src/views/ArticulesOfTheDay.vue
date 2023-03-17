@@ -1,36 +1,29 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
 
 import BlogPost from '../components/BlogPost.vue'
 import PaginatePost from '../components/PaginatePost.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 
-const router = useRouter();
 const posts = ref([]);
 const postXpage = 10;
-const inicio = ref(0);
-const fin = ref(postXpage);
+const start = ref(0);
+const end = ref(postXpage);
 const loading = ref(true);
 
-
-const back = () => {
-  router.push('/pokemons')
-}
-
-const favorito = ref('')
-const cambiarFavorito = (title) => {
-  favorito.value = title
+const favorite = ref('')
+const changeFavorite = (title) => {
+  favorite.value = title
 }
 
 const next = () => {
-  inicio.value = inicio.value + postXpage
-  fin.value = fin.value + postXpage
+  start.value = start.value + postXpage
+  end.value = end.value + postXpage
 }
 
 const previus = () => {
-  inicio.value = inicio.value - postXpage
-  fin.value = fin.value - postXpage
+  start.value = start.value - postXpage
+  end.value = end.value - postXpage
 }
 
 onMounted(async() => {
@@ -52,19 +45,17 @@ onMounted(async() => {
 <template>
   <LoadingSpinner v-if="loading"/>
   <div class="container" v-else>
-    <h1>APP</h1>
-    <h2>Mi Post Favorito: {{ favorito }}</h2>
-    <button @click="back">Back to Todo-List</button>
-    <PaginatePost @next="next" @previus="previus" :inicio="inicio" :fin="fin" :maxLength="posts.length" class="mb-2"/>
+    <h3>Mon article préféré: {{ favorite }}</h3>
+    <PaginatePost @next="next" @previus="previus" :start="start" :end="end" :maxLength="posts.length" class="mb-2"/>
 
     <BlogPost
-      v-for="post in posts.slice(inicio, fin)"
+      v-for="post in posts.slice(start, end)"
       :key="post.id"
       :title="post.title"
       :id="post.id"
       :body="post.body"
-      @cambiarFavoritoNombre="cambiarFavorito"
+      @changeFavorite="changeFavorite"
       class="mb-2"
     ></BlogPost>
-  </div>
+  </div> 
 </template>

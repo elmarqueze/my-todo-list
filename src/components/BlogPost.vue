@@ -5,11 +5,11 @@
         id: Number,
         body: {
             type: String,
-            default: "Sin descripción",
+            default: "Sans descriptif",
         },
     });
 
-    const emit = defineEmits(['cambiarFavoritoNombre'])
+    const emit = defineEmits(['changeFavorite'])
 
 </script>
 
@@ -19,7 +19,7 @@
         <div class="card-body">
             <h5 class="card-title" > {{ id }} - {{ title }} </h5>
             <p>{{ body }}</p>
-            <button @click="emit('cambiarFavoritoNombre', title)" class="btn btn-outline-primary"> Favorito </button>
+            <button @click="emit('changeFavorite', title)" class="btn btn-outline-primary">Préférée</button>
         </div>
     </div>
 </template>

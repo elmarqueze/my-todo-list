@@ -14,6 +14,7 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
     loading.value = false;
   }, 2000)
 
+
   const todos_asc = computed(() => todos.value.sort((a,b) => {
     return b.createdAt - a.createdAt
   }))
@@ -53,6 +54,7 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
 
 </script>
 
+
 <template>
 <LoadingSpinner v-if="loading"/>
   <main class="app" v-else>
@@ -64,7 +66,6 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
 
     <section class="create-todo">
       <h3>CRÉER UNE TÂCHE À FAIRE</h3>
-
         <form @submit.prevent="addTodo">
           <h4>Qu'y a-t-il sur votre liste de tâches?</h4>
           <input

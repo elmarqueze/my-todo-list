@@ -1,6 +1,6 @@
 :root {
-	--primary: #f59d1a;
-	--business: #3A82EE;
+	--primary: #5c8ce4;
+	--business: #84b0f1;
 	--personal: var(--primary);
 	--light: #EEE;
 	--grey: #888;
@@ -9,8 +9,8 @@
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
-	--personal-glow: 0px 0px 4px rgba(243, 144, 16, 0.75);
+	--business-glow: 0px 0px 4px rgba(138, 171, 243, 0.75);
+	--personal-glow: 0px 0px 4px rgba(6, 30, 110, 0.75);
 }
 
 * {
@@ -63,6 +63,7 @@ h4 {
 	flex: 1 1 0%;
 	min-width: 0;
 }
+
 
 .greeting .title,
 .greeting .title input {

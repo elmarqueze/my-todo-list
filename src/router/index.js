@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import App from '../App.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +16,7 @@ const router = createRouter({
     {
       path: '/articules',
       name: 'articules',
-      component: () => import('../views/ArticuleOfTheDay.vue')
+      component: () => import('../views/ArticulesOfTheDay.vue')
     }
   ]
 })

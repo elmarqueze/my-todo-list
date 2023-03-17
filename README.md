@@ -1,29 +1,21 @@
 # todo-list
 
-This template should help get you started developing with Vue 3 in Vite.
+Actually, this is not just a todo, I made a post section called articles, so that I comused a free API JSON posts.
+I combined css native with a couple of bootstraps points for help me up the front end in this project.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+PD: This project is dedicated to my future boss Romain, I hope everything is going to be good hahaha.
 
 ## Project Setup
-
 ```sh
 npm install
 ```
 
 ### Compile and Hot-Reload for Development
-
 ```sh
 npm run dev
 ```
 
 ### Compile and Minify for Production
-
 ```sh
 npm run build
 ```
