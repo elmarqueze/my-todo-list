@@ -4,5 +4,5 @@
         <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-    <p class="text-center mt-2">Chargement...</p>
+    <p class="text-center mt-2">Loading...</p>
 </template>

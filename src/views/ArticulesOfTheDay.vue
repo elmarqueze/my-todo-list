@@ -35,7 +35,7 @@ onMounted(async() => {
   } finally {
     setTimeout(() => {
       loading.value = false;
-    }, 2000)
+    }, 1500)
   }
 })
 
@@ -45,7 +45,7 @@ onMounted(async() => {
 <template>
   <LoadingSpinner v-if="loading"/>
   <div class="container" v-else>
-    <h3>Mon article préféré: {{ favorite }}</h3>
+    <h3>My favorite article: {{ favorite }}</h3>
     <PaginatePost @next="next" @previus="previus" :start="start" :end="end" :maxLength="posts.length" class="mb-2"/>
 
     <BlogPost

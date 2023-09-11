@@ -5,7 +5,7 @@
         id: Number,
         body: {
             type: String,
-            default: "Sans descriptif",
+            default: "Without description",
         },
     });
 
@@ -19,7 +19,7 @@
         <div class="card-body">
             <h5 class="card-title" > {{ id }} - {{ title }} </h5>
             <p>{{ body }}</p>
-            <button @click="emit('changeFavorite', title)" class="btn btn-outline-primary">Préférée</button>
+            <button @click="emit('changeFavorite', title)" class="btn btn-outline-primary">Favorite</button>
         </div>
     </div>
 </template>

@@ -60,20 +60,20 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
   <main class="app" v-else>
     <section class="greeting">
       <h2 class="title">
-        Quoi de neuf!, <input type="text" placeholder="Nom ici" v-model="name" />
+        What's new!, <input type="text" placeholder="Name here" v-model="name" />
       </h2>
     </section>
 
     <section class="create-todo">
-      <h3>CRÉER UNE TÂCHE À FAIRE</h3>
+      <h3>CREATE A TO-DO LIST</h3>
         <form @submit.prevent="addTodo">
-          <h4>Qu'y a-t-il sur votre liste de tâches?</h4>
+          <h4>What's on your to-do list?</h4>
           <input
             type="text"
-            placeholder="par exemple. faire une vidéo"
+            placeholder="For example. make a video"
             v-model="input_content" />
 
-          <h4>Choisissez une catégorie</h4>
+          <h4>Choose a category</h4>
 
           <div class="options">
 
@@ -84,7 +84,7 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
                 value="business"
                 v-model="input_category" />
               <span class="bubble business"></span>
-              <div>Entreprise</div>
+              <div>Business</div>
             </label>
 
             <label>
@@ -94,19 +94,19 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
                   value="personal"
                   v-model="input_category" />
                 <span class="bubble personal"></span>
-                <div>Personnel</div>
+                <div>Personal</div>
             </label>
 
           </div>
 
-          <input type="submit" value="Ajouter une tâche" />
+          <input type="submit" value="Add a task" />
         </form>
     </section>
 
     <section class="todo-list">
-          <h3>LISTE DE CHOSES À FAIRE</h3>
+          <h3>TODO LIST</h3>
           <div class="list">
-            <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+            <div v-for="todo in todos_asc" :key="todo.key" :class="`todo-item ${todo.done && 'done'}`">
               <label>
                 <input type="checkbox" v-model="todo.done" />
                 <span :class="`bubble ${todo.category}`"></span>
@@ -117,7 +117,7 @@ import LoadingSpinner from '../components/LoadingSpinner.vue'
               </div>
 
               <div class="actions">
-                <button class="delete" @click="removeTodo(todo)">Supprimer</button>
+                <button class="delete" @click="removeTodo(todo)">Delete</button>
               </div>
             </div>
           </div>
